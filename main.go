@@ -4,16 +4,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/jaddek/ecb/converter"
 	"github.com/joho/godotenv"
 )
-
-// func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-// 	fmt.Println("Received body: ", request.Body)
-
-// 	converted := tool.Convert()
-
-// 	return events.APIGatewayProxyResponse{Body: string(converted), StatusCode: 200}, nil
-// }
 
 func init() {
 	err := godotenv.Overload(".env", ".env.local")
@@ -26,5 +19,5 @@ func init() {
 func main() {
 	host := os.Getenv("HOST_ECB_EU_RATES")
 
-	log.Println(host)
+	log.Println(string(converter.Convert(host)))
 }

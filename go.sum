@@ -1,2 +1,4 @@
+github.com/jaddek/ecb/converter v0.0.0-20240613032933-52ef44ea0ef1 h1:gj4SMDg4PsmhW6BIr70AThMbRB7TCaPVmvebe2n11ts=
+github.com/jaddek/ecb/converter v0.0.0-20240613032933-52ef44ea0ef1/go.mod h1:V2erh4zmErycDMFNppJHaf//PRKEB2Uye0OOsjm2E0w=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
