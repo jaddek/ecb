@@ -1,23 +1,15 @@
 package main
 
 import (
-	"log"
-	"os"
+	"fmt"
 
-	"github.com/jaddek/ecb/converter"
-	"github.com/joho/godotenv"
+	"github.com/jaddek/ecb/rate"
 )
 
-func init() {
-	err := godotenv.Overload(".env", ".env.local")
-
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-}
-
 func main() {
-	host := os.Getenv("HOST_ECB_EU_RATES")
+	httpClient := rate.MakeEcbHttpClient(rate.ECB_URL)
+	body := rate.GetEcbRates(httpClient)
+	envelope := rate.MakeEnvelope(body)
 
-	log.Println(string(converter.Convert(host)))
+	fmt.Println(string(envelope.GetEnvelopeAsJson()))
 }
