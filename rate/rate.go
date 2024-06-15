@@ -6,29 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
-	"net/http"
 )
-
-const (
-	ECB_URL        = "https://www.ecb.europa.eu"
-	ECB_RATES_PATH = "/stats/eurofxref/eurofxref-daily.xml"
-)
-
-type IEcbHttpClient interface {
-	GetRates() (*http.Response, error)
-}
-
-type EcbHttpClient struct {
-	URL string
-}
-
-func MakeEcbHttpClient(host string) *EcbHttpClient {
-	return &EcbHttpClient{URL: host}
-}
-
-func (c *EcbHttpClient) GetRates() (*http.Response, error) {
-	return http.DefaultClient.Get(c.URL + ECB_RATES_PATH)
-}
 
 type Envelope struct {
 	Cube struct {
